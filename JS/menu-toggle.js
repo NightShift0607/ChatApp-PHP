@@ -1,8 +1,3 @@
-var chk = document.querySelector("#dark-chk");
-chk.addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
-});
-
 // Toggle the submenu when clicking on the button
 
 var menuBtn = document.querySelector("#icon");
