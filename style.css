@@ -13,6 +13,8 @@
   --white-color-2: #fff;
   --black-color-1: #333;
   --black-color-2: #000;
+  --icon-color: #666;
+  --menu-color: #aaa;
   --shadow-1: rgba(0, 0, 0, 0.1);
   --shadow-2: rgba(0, 0, 0, 0.5);
 }
@@ -22,6 +24,8 @@
   --white-color-2: #333;
   --black-color-1: #fff;
   --black-color-2: #f7f7f7;
+  --icon-color: #ccc;
+  --menu-color: #777;
   --shadow-1: rgba(255, 255, 255, 0.1);
   --shadow-2: rgba(255, 255, 255, 0.2);
 }
@@ -194,12 +198,72 @@ form .name-details .field:last-child {
   font-weight: 500;
 }
 
-.users header .logout {
+/* .users header .logout {
   color: var(--white-color-2);
   font-size: 17px;
   padding: 7px 15px;
   background-color: var(--black-color-1);
   border-radius: 5px;
+} */
+
+.users .icon {
+  color: var(--icon-color);
+  cursor: pointer;
+}
+
+.users header .submenu-wrap {
+  position: absolute;
+  top: 19%;
+  right: 30%;
+  width: 180px;
+  z-index: 5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.users header .submenu-wrap.open-menu {
+  max-height: 180px;
+}
+
+.users header .submenu {
+  background-color: var(--menu-color);
+  padding: 5px 0;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+#dark-txt {
+  cursor: pointer;
+}
+
+.submenu-link {
+  display: flex;
+  align-items: center;
+  color: var(--black-color-2);
+  margin: 5px 0;
+}
+
+.submenu-link p {
+  width: 100%;
+  margin-left: 13px;
+}
+
+.submenu-link:hover p {
+  font-weight: 600;
+}
+
+.submenu-link i {
+  font-size: 20px;
+}
+
+.submenu-link i:not(.moon, .sun) {
+  color: var(--icon-color);
+  margin-left: 15px;
 }
 
 .users .search {
@@ -279,8 +343,18 @@ form .name-details .field:last-child {
 
 /* Dark Mode CSS */
 
-header #dark-label i {
+header i {
   font-size: 2em;
+}
+
+.users .submenu .dark-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: -12px;
+}
+
+#dark-txt:hover {
+  font-weight: 600;
 }
 
 #dark-label {
