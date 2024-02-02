@@ -2,6 +2,6 @@
 
 var menuBtn = document.querySelector("#icon");
 var menu = document.querySelector("#submenu");
-menuBtn.addEventListener("click", function () {
+menuBtn.addEventListener("click", () => {
   menu.classList.toggle("open-menu");
 });
