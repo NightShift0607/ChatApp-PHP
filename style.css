@@ -74,7 +74,7 @@ body {
   margin: 20px 0;
 }
 
-.form form .error-txt {
+.form .error-txt {
   color: #721c24;
   background-color: #f8d7da;
   padding: 8px 10px;
@@ -532,6 +532,41 @@ form .name-details .field:last-child {
 
 .users .about .contact a {
   font-size: 30px;
+}
+
+/* CSS for Settings page */
+
+.settings {
+  max-height: 513px;
+  overflow-y: auto;
+}
+
+.settings::-webkit-scrollbar {
+  width: 0;
+}
+
+.settings form .field #showPass {
+  position: absolute;
+  right: 15px;
+  color: #ccc;
+  top: 70%;
+  transform: translateY(-100%);
+  cursor: pointer;
+}
+
+.settings form .hide {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.settings form .unhide {
+  max-height: 70px;
+}
+
+.settings form .save {
+  width: 180px;
+  margin: auto;
 }
 
 /* Dark Mode CSS */
