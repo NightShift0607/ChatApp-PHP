@@ -23,24 +23,24 @@
             <span class="toggle"></span>
           </label>
         </header>
-        <form action="#">
+        <form action="#" enctype="multipart/form-data">
           <div class="error-txt">This is an error text!</div>
           <div class="field input">
             <label>Username</label>
-            <input type="text" placeholder="First Name" />
+            <input type="text" name="username" placeholder="Username" required/>
           </div>
           <div class="field input">
             <label>Email Address</label>
-            <input type="text" placeholder="Enter your Email" />
+            <input type="text" name="email" placeholder="Enter your Email" required/>
           </div>
           <div class="field input">
             <label>Password</label>
-            <input type="password" placeholder="Enter new Password" />
+            <input type="password" name="password" placeholder="Enter new Password" required/>
             <i class="fa-solid fa-eye"></i>
           </div>
           <div class="field image">
             <label>Select Image</label>
-            <input type="file" />
+            <input type="file" name="image" required/>
           </div>
           <div class="field button">
             <input type="submit" value="Continue to Chat" />
@@ -51,5 +51,6 @@
     </div>
     <script src="JS/dark-mode.js"></script>
     <script src="JS/password-show.js"></script>
+    <script src="JS/signup.js"></script>
   </body>
 </html>
