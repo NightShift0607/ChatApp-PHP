@@ -1,5 +1,6 @@
 const form = document.querySelector(".signup form");
 const submitBtn = document.querySelector(".button input");
+const errorText = document.querySelector(".error-txt");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // Preventing the default submission of the form when click on the button
@@ -11,7 +12,12 @@ submitBtn.addEventListener("click", () => {
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       let data = xhttp.response;
-      console.log(data);
+      if (data === "Success") {
+        location.href = "users.php";
+      } else {
+        errorText.style.display = "block";
+        errorText.innerHTML = data;
+      }
     }
   };
   //   Sending form data to php thorugh ajax

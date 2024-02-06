@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once "config.php";
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -20,9 +21,26 @@
                     $img_explode = explode('.', $img_name);
                     $img_ext = end($img_explode);    // extension of the image
                     $allowed_types = ['jpg','jpeg','png'];   // allowed extensions
-                    if (in_array($img_ext, $allowed_types) === true) { // uploaded file ext should match with allowed ext
-                        $time = time();  // for image to have unique name i will rename current time of upload
-                        $status = "Active now"; // after signup user's status will be active now 
+                    if (in_array($img_ext, $allowed_types) === true) { // uploaded file extension should match with allowed extension
+                        $time = time();  // for image to have unique name I will rename current time of upload
+                        // moving uploaded image to a specific folder and changing its name by adding uploaded time before image name
+                        $new_img_name = $time.$img_name;
+                        if (move_uploaded_file($tmp_name, "../images/".$new_img_name)) {  // if image moved successfully
+                            $status = "Active now"; // after signup user's status will be active now
+                            $random_id = rand(time(), 10000000); // creating random id for user
+                            // insert user data in database
+                            $query2 = mysqli_query($conn,"INSERT INTO users (unique_id, username, email, password, img, status) VALUES ({$random_id}, '{$username}', '{$email}', '{$password}', '{$new_img_name}', '{$status}')");
+                            if ($query2) {  // data inserted successful
+                                $query3 = mysqli_query($conn,"SELECT * FROM users WHERE email = '{$email}'");
+                                if (mysqli_num_rows($query3) > 0) {
+                                    $row = mysqli_fetch_assoc($query3);
+                                    $_SESSION['unique_id'] = $row['unique_id']; // using this session to use in other php files
+                                    echo "Success";
+                                }
+                            } else {
+                                echo "Something went wrong!";
+                            }
+                        }
                     } else {
                         echo "Please Select an Image file! - jpeg, jpg, png";
                     }
