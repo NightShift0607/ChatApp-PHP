@@ -27,20 +27,20 @@
           <div class="error-txt"></div>
           <div class="field input">
             <label>Username</label>
-            <input type="text" name="username" placeholder="Username" required/>
+            <input type="text" name="username" placeholder="Username" />
           </div>
           <div class="field input">
             <label>Email Address</label>
-            <input type="text" name="email" placeholder="Enter your Email" required/>
+            <input type="text" name="email" placeholder="Enter your Email" />
           </div>
           <div class="field input">
             <label>Password</label>
-            <input type="password" name="password" placeholder="Enter new Password" required/>
+            <input type="password" name="password" placeholder="Enter new Password" />
             <i class="fa-solid fa-eye"></i>
           </div>
           <div class="field image">
             <label>Select Image</label>
-            <input type="file" name="image" required/>
+            <input type="file" name="image" />
           </div>
           <div class="field button">
             <input type="submit" value="Continue to Chat" />
