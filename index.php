@@ -24,7 +24,7 @@
           </label>
         </header>
         <form action="#" enctype="multipart/form-data">
-          <div class="error-txt">This is an error text!</div>
+          <div class="error-txt"></div>
           <div class="field input">
             <label>Username</label>
             <input type="text" name="username" placeholder="Username" required/>
