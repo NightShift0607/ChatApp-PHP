@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ChitChatSphere - A Chatting App</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<?php include_once "header.php"; ?>
   <body>
     <div class="wrapper">
       <section class="form login">
@@ -24,14 +12,14 @@
           </label>
         </header>
         <form action="#">
-          <div class="error-txt">This is an error text!</div>
+          <div class="error-txt"></div>
           <div class="field input">
             <label>Email Address</label>
-            <input type="text" placeholder="Enter your Email" />
+            <input type="text" name="email" placeholder="Enter your Email" />
           </div>
           <div class="field input">
             <label>Password</label>
-            <input type="password" placeholder="Enter your Password" />
+            <input type="password" name="password" placeholder="Enter your Password" />
             <i class="fa-solid fa-eye"></i>
           </div>
           <div class="field button">
@@ -43,5 +31,6 @@
     </div>
     <script src="JS/dark-mode.js"></script>
     <script src="JS/password-show.js"></script>
+    <script src="JS/login.js"></script>
   </body>
 </html>
