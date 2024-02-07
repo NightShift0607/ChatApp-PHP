@@ -14,9 +14,7 @@
         } else {
             echo "Email or Password is invalid!";
         }
-         
     } else {
         echo "All fields are required!";
     }
-    
 ?>

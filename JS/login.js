@@ -8,7 +8,7 @@ form.addEventListener("submit", (e) => {
 
 submitBtn.addEventListener("click", () => {
   var xhttp = new XMLHttpRequest(); //XML object created
-  xhttp.open("post", "php/login.php", true);
+  xhttp.open("POST", "php/login.php", true);
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       let data = xhttp.response;
