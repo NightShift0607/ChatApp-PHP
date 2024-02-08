@@ -345,7 +345,7 @@ body {
 
 /* Use this class name in php to show offline status */
 
-.users-list .status-dot .offline {
+.users-list .status-dot.offline {
   color: #ccc;
 }
 
