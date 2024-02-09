@@ -6,17 +6,18 @@
 ?>
 
 <?php include_once "header.php"; ?>
-  <body>
+<?php    // Code to fetch data from database
+  include_once "php/config.php";
+  $query = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+  if (mysqli_num_rows($query) > 0) {
+    $row = mysqli_fetch_assoc($query);
+  }
+?>
+<?php include_once "dark-style.php"; ?>
+  <body class="<?php echo ($row['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="users">
         <header>
-          <?php    // Code to fetch data from database
-            include_once "php/config.php";
-            $query = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-            if (mysqli_num_rows($query) > 0) {
-              $row = mysqli_fetch_assoc($query);
-            }
-          ?>
           <div class="content">
             <img src="images/<?php echo $row['img'] ?>" alt="Profile" />
             <div class="details">
@@ -30,17 +31,17 @@
               <div class="submenu">
                 <div class="dark-toggle">
                   <label id="dark-label" class="submenu-link">
-                    <input type="checkbox" id="dark-chk" />
+                    <input type="checkbox" value="<?php echo ($row['theme'] == "Dark") ? "Light" : "Dark" ?>" id="dark-chk" />
                     <i class="fa-solid fa-sun sun"></i>
                     <i class="fa-solid fa-moon moon"></i>
                   </label>
-                  <label for="dark-chk" id="dark-txt">Dark Mode</label>
+                  <label for="dark-chk" id="dark-txt"><?php echo ($row['theme'] == "Dark") ? "Light" : "Dark" ?> Mode</label>
                 </div>
-                <a href="#" class="submenu-link">
+                <a href="settings.php" class="submenu-link">
                   <i class="fa-solid fa-gear"></i>
                   <p>Settings</p>
                 </a>
-                <a href="#" class="submenu-link">
+                <a href="about.php" class="submenu-link">
                   <i class="fa-solid fa-circle-info"></i>
                   <p>About and Support</p>
                 </a>
@@ -66,5 +67,15 @@
     <script src="JS/dark-mode.js"></script>
     <script src="JS/searchbar-show.js"></script>
     <script src="JS/users.js"></script>
+    <script>
+      const darkTxt = document.querySelector("#dark-txt");
+      chk.addEventListener("click", () => {
+      if (darkTxt.innerHTML == "Dark Mode") {
+        darkTxt.innerHTML = "Light Mode";
+      } else {
+        darkTxt.innerHTML = "Dark Mode";
+      }
+    });
+    </script>
   </body>
 </html>

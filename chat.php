@@ -6,7 +6,15 @@
 ?>
 
 <?php include_once "header.php"; ?>
-  <body>
+<?php    // Code to fetch data from database
+  include_once "php/config.php";
+  $query2 = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+  if (mysqli_num_rows($query2) > 0) {
+    $row2 = mysqli_fetch_assoc($query2);
+  }
+?>
+<?php include_once "dark-style.php"; ?>
+  <body class="<?php echo ($row2['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="chat-area">
         <header>
@@ -26,12 +34,6 @@
             <span><?php echo $row['username']; ?></span>
             <p><?php echo $row['status']; ?></p>
           </div>
-          <label id="dark-label">
-            <input type="checkbox" id="dark-chk" />
-            <i class="fa-solid fa-sun sun"></i>
-            <i class="fa-solid fa-moon moon"></i>
-            <span class="toggle"></span>
-          </label>
         </header>
         <div class="chat-box"></div>
         <form action="#" class="typing-area" autocomplete="off">

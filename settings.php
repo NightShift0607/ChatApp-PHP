@@ -1,11 +1,28 @@
+<?php 
+  session_start();
+  if (!isset($_SESSION['unique_id'])) {
+    header("location: login.php");  // if session is not set then go directly to login page
+  }
+?>
+
 <?php include_once "header.php"; ?>
-  <body>
+<?php    // Code to fetch data from database
+  include_once "php/config.php";
+  $query = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+  if (mysqli_num_rows($query) > 0) {
+    $row = mysqli_fetch_assoc($query);
+  }
+?>
+<?php include_once "dark-style.php"; ?>
+  <body class="<?php echo ($row['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="form settings">
         <header>
+          <a href="users.php" class="back-icon"
+              ><i class="fa-solid fa-arrow-left"></i></a>
           <h1>ChitChatSphere</h1>
           <label id="dark-label">
-            <input type="checkbox" id="dark-chk" />
+            <input type="checkbox" value="<?php echo ($row['theme'] == "Dark") ? "Light" : "Dark" ?>" id="dark-chk" />
             <i class="fa-solid fa-sun sun"></i>
             <i class="fa-solid fa-moon moon"></i>
             <span class="toggle"></span>

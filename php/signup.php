@@ -29,7 +29,7 @@
                             $status = "Active now"; // after signup user's status will be active now
                             $random_id = rand(time(), 10000000); // creating random id for user
                             // insert user data in database
-                            $query2 = mysqli_query($conn,"INSERT INTO users (unique_id, username, email, password, img, status) VALUES ({$random_id}, '{$username}', '{$email}', '{$password}', '{$new_img_name}', '{$status}')");
+                            $query2 = mysqli_query($conn,"INSERT INTO users (unique_id, username, email, password, img, status, theme) VALUES ({$random_id}, '{$username}', '{$email}', '{$password}', '{$new_img_name}', '{$status}', 'Light')");
                             if ($query2) {  // data inserted successful
                                 $query3 = mysqli_query($conn,"SELECT * FROM users WHERE email = '{$email}'");
                                 if (mysqli_num_rows($query3) > 0) {

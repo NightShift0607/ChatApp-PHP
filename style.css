@@ -357,7 +357,7 @@ body {
   padding: 18px 30px;
 }
 
-.chat-area header .back-icon {
+.back-icon {
   font-size: 18px;
   color: var(--black-color-1);
 }
@@ -533,6 +533,10 @@ body {
   width: 0;
 }
 
+.settings .back-icon {
+  margin-right: 10px;
+}
+
 .settings form .field #showPass {
   position: absolute;
   right: 15px;
@@ -563,10 +567,6 @@ body {
   cursor: pointer;
 }
 
-/* header i {
-  font-size: 2em;
-} */
-
 .users .submenu .dark-toggle {
   display: flex;
   align-items: center;
@@ -590,31 +590,4 @@ body {
 #dark-chk {
   position: absolute;
   opacity: 0;
-}
-
-.sun {
-  font-size: 2em;
-  position: absolute;
-  color: #ccc;
-  filter: drop-shadow(0 0 2px rgba(225, 225, 225, 0.5));
-  transition: 1s ease;
-  transform: scale(0);
-}
-
-#dark-chk:checked ~ .sun {
-  transition-delay: 0.8s;
-  transform: scale(1) rotate(360deg);
-}
-
-.moon {
-  font-size: 2em;
-  color: #666;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
-  transition: 1s ease;
-  transition-delay: 0.8s;
-}
-
-#dark-chk:checked ~ .moon {
-  transition-delay: 0s;
-  transform: rotate(360deg) scale(0);
 }

@@ -1,8 +1,21 @@
+<?php session_start(); ?>
+
 <?php include_once "header.php"; ?>
-  <body>
+<?php    // Code to fetch data from database
+  include_once "php/config.php";
+  $query = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+  if (mysqli_num_rows($query) > 0) {
+    $row = mysqli_fetch_assoc($query);
+  }
+?>
+<?php include_once "dark-style.php"; ?>
+  <body class="<?php echo ($row['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="users">
         <header>
+        <a href="users.php" class="back-icon"
+            ><i class="fa-solid fa-arrow-left"></i
+          ></a>
           <h1>About and Support</h1>
           <label id="dark-label">
             <input type="checkbox" id="dark-chk" />
