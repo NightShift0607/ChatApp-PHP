@@ -45,7 +45,7 @@
                   <i class="fa-solid fa-circle-info"></i>
                   <p>About and Support</p>
                 </a>
-                <a href="#" class="submenu-link">
+                <a href="php/logout.php?logout_id=<?php echo $row['unique_id'] ?>" class="submenu-link">
                   <i class="fa-solid fa-right-from-bracket"></i>
                   <p>logout</p>
                 </a>
