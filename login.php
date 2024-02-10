@@ -1,4 +1,32 @@
 <?php include_once "header.php"; ?>
+<style>
+    .sun {
+        font-size: 2em;
+        position: absolute;
+        color: #ccc;
+        filter: drop-shadow(0 0 2px rgba(225, 225, 225, 0.5));
+        transition: 1s ease;
+        transform: scale(0);
+    }
+
+    #dark-chk:checked ~ .sun {
+        transition-delay: 0.8s;
+        transform: scale(1) rotate(360deg);
+    }
+
+    .moon {
+        font-size: 2em;
+        color: #666;
+        filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+        transition: 1s ease;
+        transition-delay: 0.8s;
+    }
+
+    #dark-chk:checked ~ .moon {
+        transition-delay: 0s;
+        transform: rotate(360deg) scale(0);
+    }
+  </style>
   <body>
     <div class="wrapper">
       <section class="form login">

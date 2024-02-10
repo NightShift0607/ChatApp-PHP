@@ -34,7 +34,7 @@
             <input type="button" value="Change Your Username" />
           </div>
           <div class="field input hide">
-            <input type="text" placeholder="Username" />
+            <input type="text" name="username" class="send" placeholder="Username" />
           </div>
           <div class="field button save hide">
             <input type="submit" value="Save Changes" />
@@ -45,7 +45,7 @@
             <input type="button" value="Change you Email" />
           </div>
           <div class="field input hide">
-            <input type="text" placeholder="Enter new Email" />
+            <input type="text" name="email" class="send" placeholder="Enter new Email" />
           </div>
           <div class="field button save hide">
             <input type="submit" value="Save Changes" />
@@ -56,19 +56,19 @@
             <input type="button" value="Change you Password" />
           </div>
           <div class="field input hide">
-            <input type="password" placeholder="Enter new Password" />
+            <input type="password" name="password" class="send" placeholder="Enter new Password" />
             <i class="fa-solid fa-eye" id="showPass"></i>
           </div>
           <div class="field button save hide">
             <input type="submit" value="Save Changes" />
           </div>
         </form>
-        <form action="#">
+        <form action="#" enctype="multipart/form-data">
           <div class="field button">
             <input type="button" value="Change you Profile Pic" />
           </div>
           <div class="field image hide">
-            <input type="file" />
+            <input type="file" name="img" />
           </div>
           <div class="field button save hide">
             <input type="submit" value="Save Changes" />
@@ -78,6 +78,6 @@
     </div>
     <script src="JS/dark-mode.js"></script>
     <script src="JS/password-show.js"></script>
-    <script src="JS/hide-unhide.js"></script>
+    <script src="JS/settings.js"></script>
   </body>
 </html>

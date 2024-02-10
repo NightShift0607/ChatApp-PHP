@@ -9,9 +9,7 @@ chk.addEventListener("click", () => {
   xhttp.onload = () => {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       let data = xhttp.response;
-      if (data === "success") {
-        chk.checked = false;
-      }
+      console.log(data);
     }
   };
   //   Sending theme data to php thorugh ajax

@@ -18,7 +18,7 @@
           ></a>
           <h1>About and Support</h1>
           <label id="dark-label">
-            <input type="checkbox" id="dark-chk" />
+            <input type="checkbox" value="<?php echo ($row['theme'] == "Dark") ? "Light" : "Dark" ?>" id="dark-chk" />
             <i class="fa-solid fa-sun sun"></i>
             <i class="fa-solid fa-moon moon"></i>
             <span class="toggle"></span>
