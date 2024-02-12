@@ -2,10 +2,25 @@ const chatForm = document.querySelector(".typing-area");
 const inputField = document.querySelector(".input-field");
 const sendBtn = document.querySelector("button");
 const chatBox = document.querySelector(".chat-box");
+const rStatus = document.querySelector("#status");
 
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Preventing the default submission of the form when click on the button
 });
+
+setInterval(() => {
+  var xhttp = new XMLHttpRequest(); //XML object created
+  xhttp.open("POST", "php/status-return.php", true);
+  xhttp.onload = () => {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      let data = xhttp.response;
+      rStatus.innerHTML = data;
+    }
+  };
+  //   Sending form data to php thorugh ajax
+  let formData = new FormData(chatForm); // new object for form data
+  xhttp.send(formData); //sending the form data to php
+}, 500); // Function will run after 500ms
 
 sendBtn.addEventListener("click", () => {
   var xhttp = new XMLHttpRequest(); //XML object created

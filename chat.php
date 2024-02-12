@@ -32,7 +32,7 @@
           <img src="images/<?php echo $row['img']; ?>" alt="Profile" />
           <div class="details full">
             <span><?php echo $row['username']; ?></span>
-            <p><?php echo $row['status']; ?></p>
+            <p id="status"><?php echo $row['status']; ?></p>
           </div>
         </header>
         <div class="chat-box"></div>
