@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+  session_start();
+  if (!isset($_SESSION['unique_id'])) {
+    header("location: login.php");  // if session is not set then go directly to login page
+  }
+?>
 
 <?php include_once "header.php"; ?>
 <?php    // Code to fetch data from database
