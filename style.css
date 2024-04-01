@@ -591,3 +591,16 @@ body {
   position: absolute;
   opacity: 0;
 }
+
+#delete {
+  margin-top: 13px;
+  height: 45px;
+  border: none;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--white-color-2);
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #d61b2d;
+}

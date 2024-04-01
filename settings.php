@@ -42,7 +42,7 @@
         </form>
         <form action="#">
           <div class="field button">
-            <input type="button" value="Change you Email" />
+            <input type="button" value="Change Your Email" />
           </div>
           <div class="field input hide">
             <input type="text" name="email" class="send" placeholder="Enter new Email" />
@@ -53,7 +53,7 @@
         </form>
         <form action="#">
           <div class="field button">
-            <input type="button" value="Change you Password" />
+            <input type="button" value="Change Your Password" />
           </div>
           <div class="field input hide">
             <input type="password" name="password" class="send" placeholder="Enter new Password" />
@@ -65,7 +65,7 @@
         </form>
         <form action="#" enctype="multipart/form-data">
           <div class="field button">
-            <input type="button" value="Change you Profile Pic" />
+            <input type="button" value="Change Your Profile Pic" />
           </div>
           <div class="field image hide">
             <input type="file" name="img" />
@@ -74,6 +74,9 @@
             <input type="submit" value="Save Changes" />
           </div>
         </form>
+        <a href="php/delete.php?delete_id=<?php echo $row['unique_id'] ?>">
+          <input type="button" id="delete" value="Delete Your Account" />
+        </a>
       </section>
     </div>
     <script src="JS/dark-mode.js"></script>
