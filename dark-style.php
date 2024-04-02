@@ -2,6 +2,7 @@
     /* Dark Mode CSS */
 
     <?php
+    if (isset($row['theme'])) {
         if ($row['theme'] == "Dark") {
             $icon1="moon";
             $icon2="sun";
@@ -13,6 +14,12 @@
             $color1 = "#ccc";
             $color2 = "#666";
         }
+    } else {
+        $icon1="sun";
+        $icon2="moon";
+        $color1 = "#ccc";
+        $color2 = "#666";
+    }
     ?>
 
     .<?php echo $icon1 ?> {

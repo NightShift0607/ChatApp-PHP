@@ -1,38 +1,26 @@
 <?php 
-  session_start();
-  if (!isset($_SESSION['unique_id'])) {
-    header("location: login.php");  // if session is not set then go directly to login page
-  }
+  include_once "extra.php";
 ?>
 
-<?php include_once "header.php"; ?>
-<?php    // Code to fetch data from database
-  include_once "php/config.php";
-  $query2 = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-  if (mysqli_num_rows($query2) > 0) {
-    $row2 = mysqli_fetch_assoc($query2);
-  }
-?>
-<?php include_once "dark-style.php"; ?>
-  <body class="<?php echo ($row2['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
+  <body class="<?php echo ($row['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="chat-area">
         <header>
           <?php    // Code to fetch data from database
             include_once "php/config.php";
             $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
-            $query = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$user_id}");
-            if (mysqli_num_rows($query) > 0) {
-              $row = mysqli_fetch_assoc($query);
+            $query2 = mysqli_query($conn,"SELECT * FROM users WHERE unique_id = {$user_id}");
+            if (mysqli_num_rows($query2) > 0) {
+              $row2 = mysqli_fetch_assoc($query2);
             }
           ?>
           <a href="users.php" class="back-icon"
             ><i class="fa-solid fa-arrow-left"></i
           ></a>
-          <img src="images/<?php echo $row['img']; ?>" alt="Profile" />
+          <img src="images/<?php echo $row2['img']; ?>" alt="Profile" />
           <div class="details full">
-            <span><?php echo $row['username']; ?></span>
-            <p id="status"><?php echo $row['status']; ?></p>
+            <span><?php echo $row2['username']; ?></span>
+            <p id="status"><?php echo $row2['status']; ?></p>
           </div>
         </header>
         <div class="chat-box"></div>
