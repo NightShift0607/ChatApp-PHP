@@ -1,13 +1,14 @@
 <?php
     session_start();
     include_once "config.php";
+    // Escape special characters, if any
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Checking Whether no empty fields are present or not 
     if (!empty($username)  && !empty($email) && !empty($password)) {
-        // Checking whether username is already exist or not
+        // Checking whether username is already exist in the database or not
         $query = mysqli_query($conn,"SELECT username FROM users WHERE username = '{$username}'");
         if (mysqli_num_rows($query) > 0) {
             echo "This $username already exist!";

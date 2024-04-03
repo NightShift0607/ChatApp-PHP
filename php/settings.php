@@ -2,6 +2,7 @@
     session_start();
     include_once "config.php";
     $user_id = $_SESSION['unique_id'];
+    // Escape special characters, if any
     $type = mysqli_real_escape_string($conn, $_POST['type']);
     $content = mysqli_real_escape_string($conn, $_POST['content']);
     if (!empty($content)) {     // checking wheather data is empty or not

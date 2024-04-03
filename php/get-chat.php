@@ -2,6 +2,7 @@
     session_start();
     if (isset($_SESSION['unique_id'])) {
         include_once "config.php";
+        // Escape special characters, if any
         $sender_id = mysqli_real_escape_string($conn, $_POST['sender_id']);
         $receiver_id = mysqli_real_escape_string($conn, $_POST['receiver_id']);
         $output = "";

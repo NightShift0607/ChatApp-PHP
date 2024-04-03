@@ -2,6 +2,7 @@
     session_start();
     if (isset($_SESSION['unique_id'])) {
         include_once "config.php";
+        // Escape special characters, if any
         $delete_id = mysqli_real_escape_string($conn, $_GET['delete_id']);
         if (isset($delete_id)) {    // if delete id is set
             $query = mysqli_query($conn, "DELETE FROM users WHERE unique_id = {$delete_id}");
