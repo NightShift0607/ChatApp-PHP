@@ -5,6 +5,7 @@
   <body class="<?php echo ($row['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="chat-area">
+        <?php include_once "loader.php"; ?>
         <header>
           <?php    // Code to fetch data from database
             include_once "php/config.php";

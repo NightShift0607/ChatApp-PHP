@@ -13,6 +13,7 @@ include_once "dark-style.php";
   <body>
     <div class="wrapper">
       <section class="form login">
+        <?php include_once "loader.php"; ?>
         <header>
           <h1>ChitChatSphere</h1>
           <label id="dark-label">

@@ -5,6 +5,7 @@
   <body class="<?php echo ($row['theme'] == "Dark") ? "dark-theme" : "light-theme" ?>">
     <div class="wrapper">
       <section class="users">
+        <?php include_once "loader.php"; ?>
         <header>
         <a href="users.php" class="back-icon"
             ><i class="fa-solid fa-arrow-left"></i

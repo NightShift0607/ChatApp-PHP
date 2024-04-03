@@ -1,18 +1,11 @@
 <?php 
-  session_start();
-  if (isset($_SESSION['unique_id'])) {
-    header("location: users.php");  // if session is not set then go directly to login page
-  }
-?>
-
-<?php 
-include_once "header.php"; 
-include_once "dark-style.php"; 
+  include_once "extra-header.php";
 ?>
 
   <body>
     <div class="wrapper">
       <section class="form signup">
+        <?php include_once "loader.php"; ?>
         <header>
           <h1>ChitChatSphere</h1>
           <label id="dark-label">

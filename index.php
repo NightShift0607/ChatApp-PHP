@@ -3,6 +3,7 @@
   <body>
     <div class="wrapper">
       <section class="users">
+      <?php include_once "loader.php"; ?>
         <h1 id="landing-heading">
           Welcome To <span id="chit">ChitChatSphere</span>
         </h1>
