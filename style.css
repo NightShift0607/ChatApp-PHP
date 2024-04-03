@@ -604,3 +604,62 @@ body {
   width: 100%;
   background-color: #d61b2d;
 }
+
+/* CSS for landing page */
+
+#landing-heading {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#chit {
+  display: block;
+  font-size: 3rem;
+}
+
+#create-btn {
+  margin-top: 2rem;
+  font-weight: 400;
+  background-color: var(--black-color-1);
+  color: var(--white-color-2);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 17px;
+}
+
+#or-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+#or::before {
+  content: "-- ";
+}
+
+#or {
+  font-size: 18px;
+}
+
+#or::after {
+  content: " --";
+}
+
+#log-btn {
+  font-weight: 400;
+  background-color: var(--black-color-1);
+  color: var(--white-color-2);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  font-size: 17px;
+}
+
+#para {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 20px;
+}
