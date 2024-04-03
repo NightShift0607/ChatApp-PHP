@@ -9,6 +9,7 @@ chatForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Preventing the default submission of the form when click on the button
 });
 
+// Handle Status For Online/Offline Users
 setInterval(() => {
   var xhttp = new XMLHttpRequest(); //XML object created
   xhttp.open("POST", "php/status-return.php", true);
@@ -23,6 +24,7 @@ setInterval(() => {
   xhttp.send("receiver_id=" + receiverId);
 }, 500); // Function will run after 500ms
 
+// Sends Chat Message To The Server
 sendBtn.addEventListener("click", () => {
   var xhttp = new XMLHttpRequest(); //XML object created
   xhttp.open("POST", "php/insert-chat.php", true);
@@ -45,6 +47,7 @@ chatBox.addEventListener("mouseleave", () => {
   chatBox.classList.remove("active");
 });
 
+// Display the chat messages from server
 setInterval(() => {
   var xhttp = new XMLHttpRequest(); //XML object created
   xhttp.open("POST", "php/get-chat.php", true);
