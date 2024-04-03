@@ -790,3 +790,15 @@ body {
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    transform: scale(0.85);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .wrapper {
+    transform: scale(0.8);
+  }
+}
