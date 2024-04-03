@@ -3,6 +3,7 @@ const inputField = document.querySelector(".input-field");
 const sendBtn = document.querySelector("button");
 const chatBox = document.querySelector(".chat-box");
 const rStatus = document.querySelector("#status");
+const receiverId = document.querySelector("#receiver_id").value;
 
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Preventing the default submission of the form when click on the button
@@ -17,9 +18,9 @@ setInterval(() => {
       rStatus.innerHTML = data;
     }
   };
-  //   Sending form data to php thorugh ajax
-  let formData = new FormData(chatForm); // new object for form data
-  xhttp.send(formData); //sending the form data to php
+  //   Sending search data to php thorugh ajax
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("receiver_id=" + receiverId);
 }, 500); // Function will run after 500ms
 
 sendBtn.addEventListener("click", () => {

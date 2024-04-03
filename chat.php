@@ -27,7 +27,7 @@
         <div class="chat-box"></div>
         <form action="#" class="typing-area" autocomplete="off">
           <input type="text" name="sender_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden>
-          <input type="text" name="receiver_id" value="<?php echo $user_id; ?>" hidden>
+          <input type="text" name="receiver_id" id="receiver_id" value="<?php echo $user_id; ?>" hidden>
           <input type="text" name="message" class="input-field" placeholder="Type a message here..." />
           <button><i class="fa-solid fa-paper-plane"></i></button>
         </form>
